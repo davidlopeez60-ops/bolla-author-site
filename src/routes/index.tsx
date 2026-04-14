@@ -12,56 +12,72 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center grain-overlay overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40 z-[2]" />
+      {/* HERO — Full-viewport, centered author name over background (Sharon Blackie style) */}
+      <section className="relative min-h-screen flex items-center justify-center grain-overlay overflow-hidden">
         <img
           src={bookCover}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover"
           width={800}
           height={1200}
         />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
-          <div>
-            <span className="font-handwriting text-gold text-xl mb-4 block">A debut novel</span>
-            <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1] mb-4">
-              A Space on<br />the Wall
-            </h1>
-            <p className="font-handwriting text-gold-bright text-2xl mb-6">by John Bolla</p>
-            <p className="font-body text-muted-foreground text-lg leading-relaxed mb-8 max-w-lg">
-              A physician. A detective. A woman who vanished. And the one clue that changes everything.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/book"
-                className="inline-flex items-center justify-center px-8 py-3 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
-              >
-                Order the Book
-              </Link>
-              <Link
-                to="/book"
-                className="inline-flex items-center justify-center px-8 py-3 border border-gold/50 text-gold font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold/10 transition-colors"
-              >
-                Read an Excerpt
-              </Link>
-            </div>
-          </div>
-          <div className="hidden md:flex justify-center">
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="relative z-10 text-center px-6">
+          <p className="font-handwriting text-gold text-xl md:text-2xl mb-6 tracking-wide">A debut novel</p>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.95] tracking-wide">
+            JOHN BOLLA
+          </h1>
+          <div className="gold-divider !w-24 mx-auto my-8" />
+          <p className="font-body text-muted-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
+            A physician. A detective. A woman who vanished.<br />And the one clue that changes everything.
+          </p>
+        </div>
+      </section>
+
+      {/* THE BOOK — Full-width split panel (image left, text right) */}
+      <section className="grain-overlay">
+        <div className="relative z-10 grid md:grid-cols-2 min-h-[80vh]">
+          {/* Left: book cover image */}
+          <div className="relative flex items-center justify-center bg-surface py-16 px-8">
             <img
               src={bookCover}
               alt="A Space on the Wall book cover"
-              className="book-tilt w-80 rounded-sm"
+              className="book-tilt w-64 md:w-80"
               width={800}
               height={1200}
             />
           </div>
+          {/* Right: synopsis text */}
+          <div className="flex items-center px-8 md:px-16 py-16">
+            <div className="max-w-lg">
+              <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">A Space on<br />the Wall</h2>
+              <p className="font-handwriting text-gold-bright text-xl mb-6">by John Bolla</p>
+              <GoldDivider className="!my-6 !w-20" />
+              <p className="font-body text-muted-foreground text-lg leading-relaxed mb-8">
+                Alec Barnes is a physician with a marathon obsession and a family legacy he can&apos;t outrun. When a child disappears from a quiet suburban street in the span of a heartbeat, he&apos;s the only witness — and the only one who knows what he saw. A taut, compassionate thriller that moves between hospital corridors and cold cases.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/book"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
+                >
+                  Order the Book
+                </Link>
+                <Link
+                  to="/book"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-gold/50 text-gold font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold/10 transition-colors"
+                >
+                  Read an Excerpt
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Quote Strip */}
+      {/* QUOTE STRIP — Centered, full-width dark band */}
       <section className="bg-surface grain-overlay border-y border-gold/10">
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-16">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center">
           <AnimatedSection>
             <PullQuote
               quote="He'd blow it up to whatever size current technology would allow, frame it, and hang it on the wall in the clubhouse next to his father's."
@@ -71,27 +87,25 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About the Author Teaser */}
-      <section className="bg-background grain-overlay">
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24">
-          <AnimatedSection>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="flex justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-sm shadow-[inset_0_0_60px_rgba(0,0,0,0.8)]" />
-                  <img
-                    src={authorPhoto}
-                    alt="John Bolla, author"
-                    className="w-72 md:w-80 rounded-sm border border-gold/20"
-                    loading="lazy"
-                    width={800}
-                    height={1000}
-                  />
-                </div>
-              </div>
-              <div>
-                <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">About the Author</h2>
-                <GoldDivider className="!my-4 !w-24" />
+      {/* ABOUT THE AUTHOR — Full-width split panel (photo left, bio right) */}
+      <section className="grain-overlay">
+        <div className="relative z-10 grid md:grid-cols-2 min-h-[70vh]">
+          <div className="relative overflow-hidden">
+            <img
+              src={authorPhoto}
+              alt="John Bolla, author"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width={800}
+              height={1000}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/30" />
+          </div>
+          <div className="flex items-center px-8 md:px-16 py-16 bg-background">
+            <div className="max-w-lg">
+              <AnimatedSection>
+                <h2 className="font-display text-4xl text-foreground mb-6">About the Author</h2>
+                <GoldDivider className="!my-4 !w-20" />
                 <p className="font-body text-muted-foreground text-lg leading-relaxed mb-6">
                   John Bolla was born and raised in Montreal. After three failed attempts at veterinary school, he earned his medical degree from McGill University and has practiced emergency and family medicine across Canada and the United States. He now lives in a coastal community in Florida. <em>A Space on the Wall</em> is his first novel.
                 </p>
@@ -101,71 +115,31 @@ function HomePage() {
                 >
                   Read Full Bio →
                 </Link>
-              </div>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
-      {/* The Book Section */}
+      {/* FAQ TEASER */}
       <section className="bg-surface grain-overlay border-y border-gold/10">
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+        <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center">
           <AnimatedSection>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">The Novel</h2>
-                <GoldDivider className="!my-4 !w-24" />
-                <p className="font-body text-muted-foreground text-lg leading-relaxed mb-8">
-                  Alec Barnes is a physician with a marathon obsession and a family legacy he can&apos;t outrun. When a child disappears from a quiet suburban street in the span of a heartbeat, he&apos;s the only witness — and the only one who knows what he saw. What follows is a taut, compassionate thriller that moves between hospital corridors and cold cases, between the relentless pace of emergency medicine and the slow unraveling of a community&apos;s darkest secrets.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    to="/book"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
-                  >
-                    Buy Now
-                  </Link>
-                  <Link
-                    to="/book"
-                    className="inline-flex items-center justify-center px-8 py-3 border border-gold/50 text-gold font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold/10 transition-colors"
-                  >
-                    Read Excerpt
-                  </Link>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <img
-                  src={bookCover}
-                  alt="A Space on the Wall"
-                  className="w-64 md:w-72 rounded-sm shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
-                  loading="lazy"
-                  width={800}
-                  height={1200}
-                />
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* FAQ Teaser */}
-      <section className="bg-background grain-overlay">
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-24">
-          <AnimatedSection>
-            <h2 className="font-display text-3xl text-foreground text-center mb-12">Frequently Asked</h2>
+            <h2 className="font-display text-4xl text-foreground mb-4">Frequently Asked</h2>
+            <GoldDivider className="!w-20 mx-auto !mb-12" />
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { q: "Where can I buy the book?", link: "/faq" },
-                { q: "Is John Bolla available for speaking engagements?", link: "/faq" },
-                { q: "Will there be a sequel?", link: "/faq" },
-              ].map((item) => (
+                "Where can I buy the book?",
+                "Is John Bolla available for speaking engagements?",
+                "Will there be a sequel?",
+              ].map((q) => (
                 <Link
-                  key={item.q}
-                  to={item.link}
-                  className="group block bg-card border border-border rounded-sm p-6 hover:border-gold/40 transition-colors"
+                  key={q}
+                  to="/faq"
+                  className="group block bg-card border border-border rounded-sm p-6 hover:border-gold/40 transition-colors text-left"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <p className="font-body text-foreground">{item.q}</p>
+                    <p className="font-body text-foreground">{q}</p>
                     <span className="text-gold text-xl font-display shrink-0">+</span>
                   </div>
                 </Link>
@@ -175,28 +149,41 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="bg-surface grain-overlay border-y border-gold/10">
-        <div className="relative z-10 mx-auto max-w-2xl px-6 py-24 text-center">
-          <AnimatedSection>
-            <h2 className="font-display text-3xl text-foreground mb-4">Stay in the Story</h2>
-            <p className="font-body text-muted-foreground mb-8">
-              Get updates on new releases, events, and exclusive excerpts.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </AnimatedSection>
+      {/* NEWSLETTER — "Join My Pack" style full-width split */}
+      <section className="grain-overlay">
+        <div className="relative z-10 grid md:grid-cols-2 min-h-[50vh]">
+          {/* Left: decorative dark panel */}
+          <div className="relative bg-surface flex items-center justify-center py-16 px-8">
+            <div className="text-center">
+              <span className="font-display text-6xl md:text-7xl text-foreground/10 leading-none block">Stay in</span>
+              <span className="font-display text-6xl md:text-7xl text-foreground/10 leading-none block">the Story</span>
+            </div>
+          </div>
+          {/* Right: form */}
+          <div className="flex items-center px-8 md:px-16 py-16 bg-background">
+            <div className="max-w-md">
+              <AnimatedSection>
+                <h2 className="font-display text-3xl text-foreground mb-4">Stay in the Story</h2>
+                <GoldDivider className="!my-4 !w-20" />
+                <p className="font-body text-muted-foreground mb-8">
+                  Get updates on new releases, events, and exclusive excerpts.
+                </p>
+                <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
     </>
