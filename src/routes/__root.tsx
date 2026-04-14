@@ -11,9 +11,11 @@ export const Route = createRootRoute({
       { title: "John Bolla — Author of A Space on the Wall" },
       { name: "description", content: "Official website of John Bolla, physician and debut novelist. Author of A Space on the Wall, a thriller published by Parker Publishers." },
       { property: "og:title", content: "John Bolla — Author of A Space on the Wall" },
-      { property: "og:description", content: "Official website of John Bolla, physician and debut novelist." },
+      { property: "og:description", content: "Official website of John Bolla, physician and debut novelist. Author of A Space on the Wall, a thriller published by Parker Publishers." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "John Bolla — Author of A Space on the Wall" },
+      { name: "twitter:description", content: "Official website of John Bolla, physician and debut novelist. Author of A Space on the Wall, a thriller published by Parker Publishers." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
