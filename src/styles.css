@@ -205,3 +205,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gold);
 }
+
+/* Light section utility — warm parchment theme */
+.light-section {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-foreground);
+}
+.light-section .text-foreground { color: var(--color-light-foreground); }
+.light-section .text-muted-foreground { color: var(--color-light-muted); }
+.light-section .bg-card { background-color: var(--color-light-surface); }
+.light-section .border-border { border-color: var(--color-light-border); }
+.light-section .bg-input { background-color: oklch(0.98 0.005 80); }
+.light-section .bg-surface { background-color: var(--color-light-surface); }
+
+/* Light section with cream tint */
+.light-section-warm {
+  background-color: var(--color-light-surface);
+  color: var(--color-light-foreground);
+}
+.light-section-warm .text-foreground { color: var(--color-light-foreground); }
+.light-section-warm .text-muted-foreground { color: var(--color-light-muted); }
