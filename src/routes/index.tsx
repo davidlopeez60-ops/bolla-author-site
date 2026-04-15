@@ -4,6 +4,7 @@ import { PullQuote } from "../components/PullQuote";
 import { GoldDivider } from "../components/GoldDivider";
 import bookCover from "../assets/book-cover.jpg";
 import authorPhoto from "../assets/author-photo.jpg";
+import heroBg from "../assets/hero-bg.jpg";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -12,23 +13,26 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
-      {/* HERO — Dark, full-viewport */}
-      <section className="relative min-h-screen flex items-center justify-center grain-overlay overflow-hidden">
+      {/* HERO — Full-viewport, cinematic hospital corridor */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <img
-          src={bookCover}
+          src={heroBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          width={800}
-          height={1200}
+          className="absolute inset-0 w-full h-full object-cover scale-105"
+          width={1920}
+          height={800}
         />
-        <div className="absolute inset-0 bg-background/70" />
+        {/* Multi-layer overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/60" />
+        <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 text-center px-6">
-          <p className="font-handwriting text-gold text-xl md:text-2xl mb-6 tracking-wide">A debut novel</p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.95] tracking-wide">
+          <p className="font-handwriting text-gold text-xl md:text-2xl mb-6 tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">A debut novel</p>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.95] tracking-wide drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
             JOHN BOLLA
           </h1>
           <div className="gold-divider !w-24 mx-auto my-8" />
-          <p className="font-body text-muted-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
+          <p className="font-body text-foreground/80 text-lg md:text-xl max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
             A physician. A detective. A woman who vanished.<br />And the one clue that changes everything.
           </p>
         </div>
