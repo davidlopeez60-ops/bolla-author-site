@@ -15,13 +15,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const subjects = [
-  "General Inquiry",
-  "Speaking Engagement",
-  "Press & Media",
-  "Book Club Request",
-  "Other",
-];
+const subjects = ["General Inquiry", "Speaking Engagement", "Press & Media", "Book Club Request", "Other"];
 
 function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -33,6 +27,7 @@ function ContactPage() {
 
   return (
     <>
+      {/* Hero — Dark */}
       <section className="bg-surface grain-overlay py-24">
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
@@ -42,8 +37,9 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-xl px-6">
+      {/* Form — Light */}
+      <section className="light-section py-24">
+        <div className="mx-auto max-w-xl px-6">
           <AnimatedSection>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input
@@ -52,7 +48,7 @@ function ContactPage() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
+                className="bg-white border border-light-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
               />
               <input
                 type="email"
@@ -60,17 +56,15 @@ function ContactPage() {
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
+                className="bg-white border border-light-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
               />
               <select
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className="bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body focus:outline-none focus:border-gold/60 transition-colors"
+                className="bg-white border border-light-border rounded-sm px-4 py-3 text-foreground font-body focus:outline-none focus:border-gold/60 transition-colors"
               >
                 <option value="">Select a subject</option>
-                {subjects.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
+                {subjects.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
               <textarea
                 placeholder="Your message"
@@ -78,7 +72,7 @@ function ContactPage() {
                 rows={6}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors resize-none"
+                className="bg-white border border-light-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors resize-none"
               />
               <button
                 type="submit"

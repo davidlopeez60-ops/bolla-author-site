@@ -34,7 +34,7 @@ const excerptParagraphs = [
 function BookPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — Dark */}
       <section className="bg-surface grain-overlay py-24">
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
@@ -61,9 +61,9 @@ function BookPage() {
         </div>
       </section>
 
-      {/* Book Details */}
-      <section className="bg-background grain-overlay py-16 border-y border-gold/10">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
+      {/* Book Details — Light */}
+      <section className="light-section py-16 border-y border-light-border">
+        <div className="mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
               {[
@@ -83,9 +83,9 @@ function BookPage() {
         </div>
       </section>
 
-      {/* Excerpt */}
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-4xl px-6">
+      {/* Excerpt — Light warm */}
+      <section className="light-section-warm py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <h2 className="font-display text-3xl text-foreground text-center mb-4">Read an Excerpt</h2>
             <p className="font-nav text-sm tracking-widest uppercase text-muted-foreground text-center mb-12">Chapter One</p>
@@ -99,7 +99,7 @@ function BookPage() {
         </div>
       </section>
 
-      {/* Buy the Book */}
+      {/* Buy the Book — Dark */}
       <section className="bg-surface grain-overlay border-y border-gold/10 py-24">
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <AnimatedSection>
@@ -121,15 +121,15 @@ function BookPage() {
         </div>
       </section>
 
-      {/* Full Cover */}
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
+      {/* Full Cover — Light */}
+      <section className="light-section py-24">
+        <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <h2 className="font-display text-3xl text-foreground text-center mb-12">Full Cover</h2>
             <img
               src={bookCoverFull}
               alt="A Space on the Wall — full book cover spread"
-              className="w-full rounded-sm shadow-[0_15px_60px_rgba(0,0,0,0.5)]"
+              className="w-full rounded-sm shadow-[0_15px_60px_rgba(0,0,0,0.15)]"
               loading="lazy"
               width={1920}
               height={1200}

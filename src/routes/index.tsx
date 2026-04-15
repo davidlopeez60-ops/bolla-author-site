@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
-      {/* HERO — Full-viewport, centered author name over background (Sharon Blackie style) */}
+      {/* HERO — Dark, full-viewport */}
       <section className="relative min-h-screen flex items-center justify-center grain-overlay overflow-hidden">
         <img
           src={bookCover}
@@ -34,10 +34,9 @@ function HomePage() {
         </div>
       </section>
 
-      {/* THE BOOK — Full-width split panel (image left, text right) */}
-      <section className="grain-overlay">
-        <div className="relative z-10 grid md:grid-cols-2 min-h-[80vh]">
-          {/* Left: book cover image */}
+      {/* THE BOOK — Light section */}
+      <section className="light-section">
+        <div className="grid md:grid-cols-2 min-h-[80vh]">
           <div className="relative flex items-center justify-center bg-surface py-16 px-8">
             <img
               src={bookCover}
@@ -47,11 +46,10 @@ function HomePage() {
               height={1200}
             />
           </div>
-          {/* Right: synopsis text */}
           <div className="flex items-center px-8 md:px-16 py-16">
             <div className="max-w-lg">
               <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">A Space on<br />the Wall</h2>
-              <p className="font-handwriting text-gold-bright text-xl mb-6">by John Bolla</p>
+              <p className="font-handwriting text-gold text-xl mb-6">by John Bolla</p>
               <GoldDivider className="!my-6 !w-20" />
               <p className="font-body text-muted-foreground text-lg leading-relaxed mb-8">
                 Alec Barnes is a physician with a marathon obsession and a family legacy he can&apos;t outrun. When a child disappears from a quiet suburban street in the span of a heartbeat, he&apos;s the only witness — and the only one who knows what he saw. A taut, compassionate thriller that moves between hospital corridors and cold cases.
@@ -75,7 +73,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* QUOTE STRIP — Centered, full-width dark band */}
+      {/* QUOTE STRIP — Dark */}
       <section className="bg-surface grain-overlay border-y border-gold/10">
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center">
           <AnimatedSection>
@@ -87,9 +85,9 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT THE AUTHOR — Full-width split panel (photo left, bio right) */}
-      <section className="grain-overlay">
-        <div className="relative z-10 grid md:grid-cols-2 min-h-[70vh]">
+      {/* ABOUT THE AUTHOR — Light warm section */}
+      <section className="light-section-warm">
+        <div className="grid md:grid-cols-2 min-h-[70vh]">
           <div className="relative overflow-hidden">
             <img
               src={authorPhoto}
@@ -99,9 +97,8 @@ function HomePage() {
               width={800}
               height={1000}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/30" />
           </div>
-          <div className="flex items-center px-8 md:px-16 py-16 bg-background">
+          <div className="flex items-center px-8 md:px-16 py-16">
             <div className="max-w-lg">
               <AnimatedSection>
                 <h2 className="font-display text-4xl text-foreground mb-6">About the Author</h2>
@@ -121,7 +118,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* FAQ TEASER */}
+      {/* FAQ TEASER — Dark */}
       <section className="bg-surface grain-overlay border-y border-gold/10">
         <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center">
           <AnimatedSection>
@@ -149,18 +146,16 @@ function HomePage() {
         </div>
       </section>
 
-      {/* NEWSLETTER — "Join My Pack" style full-width split */}
-      <section className="grain-overlay">
-        <div className="relative z-10 grid md:grid-cols-2 min-h-[50vh]">
-          {/* Left: decorative dark panel */}
-          <div className="relative bg-surface flex items-center justify-center py-16 px-8">
+      {/* NEWSLETTER — Light section */}
+      <section className="light-section">
+        <div className="grid md:grid-cols-2 min-h-[50vh]">
+          <div className="relative flex items-center justify-center py-16 px-8 bg-surface">
             <div className="text-center">
-              <span className="font-display text-6xl md:text-7xl text-foreground/10 leading-none block">Stay in</span>
-              <span className="font-display text-6xl md:text-7xl text-foreground/10 leading-none block">the Story</span>
+              <span className="font-display text-6xl md:text-7xl text-light-foreground/15 leading-none block">Stay in</span>
+              <span className="font-display text-6xl md:text-7xl text-light-foreground/15 leading-none block">the Story</span>
             </div>
           </div>
-          {/* Right: form */}
-          <div className="flex items-center px-8 md:px-16 py-16 bg-background">
+          <div className="flex items-center px-8 md:px-16 py-16">
             <div className="max-w-md">
               <AnimatedSection>
                 <h2 className="font-display text-3xl text-foreground mb-4">Stay in the Story</h2>

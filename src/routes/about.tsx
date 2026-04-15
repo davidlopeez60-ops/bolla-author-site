@@ -26,7 +26,7 @@ const milestones = [
 function AboutPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — Dark */}
       <section className="bg-surface grain-overlay py-24">
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
@@ -36,9 +36,9 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Bio */}
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
+      {/* Bio — Light */}
+      <section className="light-section py-24">
+        <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="flex justify-center">
@@ -46,12 +46,12 @@ function AboutPage() {
                   <img
                     src={authorPhoto}
                     alt="John Bolla"
-                    className="w-72 md:w-96 rounded-sm border border-gold/20"
+                    className="w-72 md:w-96 rounded-sm border border-light-border"
                     loading="lazy"
                     width={800}
                     height={1000}
                   />
-                  <div className="absolute inset-0 rounded-sm shadow-[inset_0_0_80px_rgba(0,0,0,0.7)]" />
+                  <div className="absolute inset-0 rounded-sm shadow-[inset_0_0_80px_rgba(0,0,0,0.15)]" />
                 </div>
               </div>
               <div>
@@ -70,7 +70,7 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Dedication */}
+      {/* Dedication — Dark */}
       <section className="bg-surface grain-overlay border-y border-gold/10 py-24">
         <div className="relative z-10 mx-auto max-w-2xl px-6">
           <AnimatedSection>
@@ -86,13 +86,13 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
+      {/* Timeline — Light warm */}
+      <section className="light-section-warm py-24">
+        <div className="mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <h2 className="font-display text-3xl text-foreground text-center mb-12">The Journey</h2>
           </AnimatedSection>
-          <div className="relative border-l border-gold/30 ml-4 md:ml-0 md:mx-auto">
+          <div className="relative border-l border-gold/40 ml-4 md:ml-0 md:mx-auto">
             {milestones.map((m, i) => (
               <AnimatedSection key={m.year} delay={i * 0.1}>
                 <div className="relative pl-8 pb-12 last:pb-0">

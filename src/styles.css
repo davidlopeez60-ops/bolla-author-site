@@ -48,6 +48,11 @@
   --color-drama-red: var(--drama-red);
   --color-parchment: var(--parchment);
   --color-parchment-foreground: var(--parchment-foreground);
+  --color-light-bg: var(--light-bg);
+  --color-light-surface: var(--light-surface);
+  --color-light-foreground: var(--light-foreground);
+  --color-light-muted: var(--light-muted);
+  --color-light-border: var(--light-border);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -99,6 +104,11 @@
   --drama-red: oklch(0.35 0.12 25);
   --parchment: oklch(0.95 0.02 80);
   --parchment-foreground: oklch(0.15 0.01 80);
+  --light-bg: oklch(0.96 0.01 80);
+  --light-surface: oklch(0.93 0.015 75);
+  --light-foreground: oklch(0.18 0.02 250);
+  --light-muted: oklch(0.45 0.03 230);
+  --light-border: oklch(0.85 0.02 75);
 
   --chart-1: oklch(0.72 0.12 75);
   --chart-2: oklch(0.55 0.08 230);
@@ -195,3 +205,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gold);
 }
+
+/* Light section utility — warm parchment theme */
+.light-section {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-foreground);
+}
+.light-section .text-foreground { color: var(--color-light-foreground); }
+.light-section .text-muted-foreground { color: var(--color-light-muted); }
+.light-section .bg-card { background-color: var(--color-light-surface); }
+.light-section .border-border { border-color: var(--color-light-border); }
+.light-section .bg-input { background-color: oklch(0.98 0.005 80); }
+.light-section .bg-surface { background-color: var(--color-light-surface); }
+
+/* Light section with cream tint */
+.light-section-warm {
+  background-color: var(--color-light-surface);
+  color: var(--color-light-foreground);
+}
+.light-section-warm .text-foreground { color: var(--color-light-foreground); }
+.light-section-warm .text-muted-foreground { color: var(--color-light-muted); }
