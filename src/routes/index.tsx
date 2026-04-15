@@ -22,19 +22,33 @@ function HomePage() {
           width={1920}
           height={800}
         />
-        {/* Multi-layer overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/60" />
+        {/* Stronger overlays for text legibility */}
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/70" />
         <div className="absolute inset-0 grain-overlay" />
         <div className="relative z-10 text-center px-6">
-          <p className="font-handwriting text-gold text-xl md:text-2xl mb-6 tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">A debut novel</p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.95] tracking-wide drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
+          <p className="font-handwriting text-gold text-xl md:text-2xl mb-6 tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">A debut novel</p>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-white leading-[0.95] tracking-wide drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
             JOHN BOLLA
           </h1>
           <div className="gold-divider !w-24 mx-auto my-8" />
-          <p className="font-body text-foreground/80 text-lg md:text-xl max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+          <p className="font-body text-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             A physician. A detective. A woman who vanished.<br />And the one clue that changes everything.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-10">
+            <Link
+              to="/book"
+              className="inline-flex items-center justify-center px-10 py-4 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors shadow-[0_4px_20px_rgba(200,146,42,0.3)]"
+            >
+              Buy Now
+            </Link>
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-center px-10 py-4 border border-foreground/40 text-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:border-gold hover:text-gold transition-colors"
+            >
+              Meet the Author
+            </Link>
+          </div>
         </div>
       </section>
 
