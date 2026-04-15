@@ -4,6 +4,7 @@ import { PullQuote } from "../components/PullQuote";
 import { GoldDivider } from "../components/GoldDivider";
 import bookCover from "../assets/book-cover.jpg";
 import authorPhoto from "../assets/author-photo.jpg";
+import heroBg from "../assets/hero-bg.jpg";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
