@@ -23,6 +23,7 @@ function DonatePage() {
 
   return (
     <>
+      {/* Hero — Dark */}
       <section className="bg-surface grain-overlay py-24">
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
@@ -32,8 +33,9 @@ function DonatePage() {
         </div>
       </section>
 
-      <section className="bg-background grain-overlay py-24">
-        <div className="relative z-10 mx-auto max-w-2xl px-6">
+      {/* Donate Content — Light */}
+      <section className="light-section py-24">
+        <div className="mx-auto max-w-2xl px-6">
           <AnimatedSection>
             <p className="font-body text-muted-foreground text-lg leading-relaxed text-center mb-12">
               Writing is a solitary and often costly pursuit. If <em>A Space on the Wall</em> moved you, challenged you, or simply gave you a few hours of escape, consider supporting the work that makes stories like this possible.
@@ -47,7 +49,7 @@ function DonatePage() {
                   className={`border rounded-sm p-4 text-center transition-all font-display text-xl ${
                     selected === amt
                       ? "border-gold bg-gold/10 text-gold"
-                      : "border-border bg-card text-foreground hover:border-gold/30"
+                      : "border-light-border bg-white text-foreground hover:border-gold/40"
                   }`}
                 >
                   ${amt}
@@ -61,13 +63,11 @@ function DonatePage() {
                 placeholder="Custom amount"
                 value={custom}
                 onChange={(e) => { setCustom(e.target.value); setSelected(null); }}
-                className="w-full bg-input border border-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
+                className="w-full bg-white border border-light-border rounded-sm px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-gold/60 transition-colors"
               />
             </div>
 
-            <button
-              className="w-full px-8 py-4 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors"
-            >
+            <button className="w-full px-8 py-4 bg-gold text-gold-foreground font-nav text-sm tracking-widest uppercase rounded-sm hover:bg-gold-bright transition-colors">
               Donate {selected ? `$${selected}` : custom ? `$${custom}` : ""}
             </button>
 
